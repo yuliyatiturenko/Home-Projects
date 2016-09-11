@@ -12,8 +12,8 @@ public class Address {
     public  String newAddress() {
 
         String newStr = address.replace(".", "[dot]");
-        String newStr1 = newStr.replace("@", "[at]");
+        String newAddress = newStr.replace("@", "[at]");
 
-        return newStr1;
+        return newAddress;
     }
 }

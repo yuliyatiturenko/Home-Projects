@@ -6,12 +6,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class AddressTest {
-    Address a;
+    Address newAddress;
 
     @Test
     public void newAddress(){
-        a  = new Address("YuliyaTiturenko@mail.ru");
-        String  result= a.newAddress();
+        newAddress  = new Address("YuliyaTiturenko@mail.ru");
+        String  result= newAddress.newAddress();
         assertThat(result,is("YuliyaTiturenko[at]mail[dot]ru"));
     }
 }

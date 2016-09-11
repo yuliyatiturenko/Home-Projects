@@ -1,10 +1,5 @@
 package String1;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import java.lang.String;
-//import static javax.xml.bind.WhiteSpaceProcessor.trim;
-
 public class StringPalindrom {
     String text;
 
@@ -15,27 +10,31 @@ public class StringPalindrom {
 
     public int searchPalindrom() {
         int count = 0;
-        boolean s = false;
-        String[] stringArray = text.split(",");
+        String[] words = text.split(",");
 
-        for (int i = 0; i < stringArray.length; i++) {
-            stringArray[i] = stringArray[i].trim();
-            int n = stringArray[i].length();
-
-            for (int j = 0; j < n / 2; j++) {
-                if (stringArray[i].charAt(j) == stringArray[i].charAt(n - j - 1)) {
-                    s = true;
-                    continue;
-                } else s = false;
-            }
-            if (s == true) {
+        for (String word : words) {
+            if (isPalindrom(word))
                 count++;
-            }
         }
 
         return count;
     }
 
+    private boolean isPalindrom(String word) {
+        word = word.trim();
+        int lengthOfWord = word.length();
 
+        boolean isPalindrom = true;
+        for (int j = 0; j < lengthOfWord / 2; j++) {
+            if (word.charAt(j) != word.charAt(lengthOfWord - j - 1)) {
+                isPalindrom = false;
+                break;
+            }
+        }
 
+        return isPalindrom;
+    }
 }
+
+
+
