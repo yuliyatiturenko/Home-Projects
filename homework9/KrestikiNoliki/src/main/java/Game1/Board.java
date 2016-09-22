@@ -26,11 +26,7 @@ public class Board {
         fillBoard();
     }
 
-    public boolean determinePlayer() {
-        if (currentPlayer.isDeterminePlayer()) {
-            return true;
-        } else return false;
-    }
+
 
     public boolean makeMove(String move) {
 

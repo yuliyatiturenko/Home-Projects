@@ -14,8 +14,8 @@ public class BoardTest {
     Board board = new Board(playerFirst, playerSecond);
     @Before
     public void setUp(){
-        playerFirst= new Player("Bob", 25, 'X');
-        playerSecond= new Player("Mike", 35, 'O');
+        playerFirst= new Human("Bob",25,'X');
+        playerSecond= new Computer();
     }
 
 

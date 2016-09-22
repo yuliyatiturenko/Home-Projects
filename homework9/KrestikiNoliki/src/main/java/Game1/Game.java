@@ -1,24 +1,18 @@
 package Game1;
 
 
-import java.util.Scanner;
-import java.util.Random;
-
 public class Game {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        Player playerFirst = new Player("Bob", 25, 'X');
-        Player playerSecond = new ComputerPlayer();
-        String move;
+
+
+        Player playerFirst = new Human("Bob",25,'X');
+        Player playerSecond = new Computer();
         Board board = new Board(playerFirst, playerSecond);
 
         while (!board.gameFinished() && !board.gameNoMove()) {
-            if (board.determinePlayer()) {
-                move = EnterMove.getMoveFromRandom(random);
-            } else move = EnterMove.getMoveFromConsole(scanner);
+            String move =board.currentPlayer.enterMove() ;
             board.makeMove(move);
             board.printBoard();
         }
