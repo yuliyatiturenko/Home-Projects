@@ -4,7 +4,6 @@ package Game1;
 import java.util.Scanner;
 
 public class Board {
-
     public static final int BOARD_SIZE = 3;
     private char[][] board;
 
@@ -25,6 +24,12 @@ public class Board {
 
         board = new char[BOARD_SIZE][BOARD_SIZE];
         fillBoard();
+    }
+
+    public boolean determinePlayer() {
+        if (currentPlayer.isDeterminePlayer()) {
+            return true;
+        } else return false;
     }
 
     public boolean makeMove(String move) {
@@ -108,15 +113,16 @@ public class Board {
         //todo add symbols to show board
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                System.out.print(" "+ ((char) 9474)+board[i][j]);
+                System.out.print(" " + ((char) 9474) + board[i][j]);
 
             }
-            System.out.print(" "+ ((char) 9474));
+            System.out.print(" " + ((char) 9474));
             System.out.println();
-            System.out.println(" " + ((char) 9472)+((char) 9472)+((char) 9472)+((char) 9472)+
-                    ((char) 9472) +((char) 9472)+((char) 9472)+((char) 9472));
+            System.out.println(" " + ((char) 9472) + ((char) 9472) + ((char) 9472) + ((char) 9472) +
+                    ((char) 9472) + ((char) 9472) + ((char) 9472) + ((char) 9472));
 
         }
+        System.out.println();
     }
 
     public Player getWinner() {
@@ -133,4 +139,6 @@ public class Board {
         }
         return false;
     }
+
+
 }
