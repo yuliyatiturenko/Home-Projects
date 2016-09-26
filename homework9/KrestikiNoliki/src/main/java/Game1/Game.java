@@ -12,8 +12,7 @@ public class Game {
         Board board = new Board(playerFirst, playerSecond);
 
         while (!board.gameFinished() && !board.gameNoMove()) {
-            String move =board.currentPlayer.enterMove() ;
-            board.makeMove(move);
+            board.makeMove();
             board.printBoard();
         }
         if (board.checkGameResult(board)) {

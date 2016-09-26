@@ -11,36 +11,38 @@ public class BoardTest {
 
     Player playerSecond;
     Player playerFirst;
-    Board board = new Board(playerFirst, playerSecond);
+    Board board1 = new Board(playerFirst, playerSecond);
+
     @Before
-    public void setUp(){
-        playerFirst= new Human("Bob",25,'X');
-        playerSecond= new Computer();
+    public void setUp() {
+        playerFirst = new Human("Bob", 25, 'X');
+        playerSecond = new Computer();
     }
 
 
     @Test
     public void getWinnerTest() {
-        Player currentPlayer= playerSecond;
-        Player winner=board.getWinner();
-        String winnersName=winner.getName();
-        assertThat(winnersName,is("Bob"));
+        Player currentPlayer = playerSecond;
+        Player winner = board1.getWinner();
+        String winnersName = winner.getName();
+        assertThat(winnersName, is("Bob"));
     }
 
 
     @Test
-    public  void validateMoveTest(){
-
+    public void validateMoveTest() {
         String move="22";
-        boolean b= board.validateMove(move);
-        assertThat(b,is(true));
+        boolean b = board1.validateMove(move);
+        assertThat(b, is(true));
     }
+
     @Test
-    public void gameFinishedTest(){
-        char[][] board1;
-        board1=new char[3][3];
-        boolean b= board.gameFinished();
-        assertThat(b,is(false));
+    public void gameFinishedTest() {
+        char[][] board;
+        board = new char[3][3];
+        board1.fillBoard();
+        boolean b = board1.gameFinished();
+        assertThat(b, is(false));
 
     }
 

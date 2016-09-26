@@ -9,26 +9,21 @@ public class Board {
 
     Player playerFirst;
     Player playerSecond;
-
     Player currentPlayer;
-
     Player winner;
-
     int kolichestvoHodov = 0;
 
     public Board(Player playerFirst, Player playerSecond) {
         this.playerFirst = playerFirst;
         this.playerSecond = playerSecond;
-
         this.currentPlayer = playerFirst;
-
         board = new char[BOARD_SIZE][BOARD_SIZE];
         fillBoard();
     }
 
 
-
-    public boolean makeMove(String move) {
+    public boolean makeMove() {
+        String move = currentPlayer.enterMove();
 
         if (!validateMove(move)) {
             return false;
@@ -36,12 +31,9 @@ public class Board {
         int i = Character.getNumericValue(move.charAt(0));
         int j = Character.getNumericValue(move.charAt(1));
 
-        if (board[i][j] == ' ') {
-            board[i][j] = currentPlayer.getType();
-            changePlayer();
-            kolichestvoHodov++;
-        } else System.out.println("Move impossible! Make your move again");
-
+        board[i][j] = currentPlayer.getType();
+        changePlayer();
+        kolichestvoHodov++;
 
         return true;
     }
@@ -49,7 +41,6 @@ public class Board {
     public void changePlayer() {
         if (currentPlayer == playerFirst) {
             currentPlayer = playerSecond;
-
         } else {
             currentPlayer = playerFirst;
         }
@@ -58,7 +49,8 @@ public class Board {
 
     public boolean validateMove(String move) {
         if ((move.length() > 2) || (Character.getNumericValue(move.charAt(0)) > 2) ||
-                (Character.getNumericValue(move.charAt(0)) > 2)) {
+                (Character.getNumericValue(move.charAt(0)) > 2) ||
+                (board[Character.getNumericValue(move.charAt(0))][Character.getNumericValue(move.charAt(1))] != ' ')) {
             System.out.println(" ");
             System.out.println("Impossible move! Enter your move again! ");
             System.out.println(" ");
@@ -68,14 +60,14 @@ public class Board {
     }
 
     private void findWinner() {
-        //todo calculate player correctly
+
         if (currentPlayer == playerFirst) {
             winner = playerSecond;
         } else winner = playerFirst;
     }
 
     public boolean gameFinished() {
-        //todo finish the function
+
         if ((board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') || (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
                 (board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X') || (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X') ||
                 (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X') || (board[0][2] == 'X' && board[1][2] == 'X' && board[2][2] == 'X') ||
@@ -106,7 +98,7 @@ public class Board {
     }
 
     public void printBoard() {
-        //todo add symbols to show board
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print(" " + ((char) 9474) + board[i][j]);

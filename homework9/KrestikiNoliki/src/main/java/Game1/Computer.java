@@ -6,8 +6,9 @@ import java.util.Random;
 public class Computer extends Player {
 
     Random random = new Random();
+
     public Computer() {
-       super("AsusX756U",2016,'O');
+        super("AsusX756U", 2016, 'O');
     }
 
     @Override

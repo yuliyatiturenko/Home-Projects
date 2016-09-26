@@ -1,7 +1,8 @@
 package Game1;
+
 import java.util.Scanner;
 
-public class Human extends Player{
+public class Human extends Player {
     Scanner scanner = new Scanner(System.in);
 
 
@@ -9,7 +10,7 @@ public class Human extends Player{
     private int age;
     private char type;
 
-    public Human(String name,int age,char type) {
+    public Human(String name, int age, char type) {
         this.name = name;
         this.age = age;
         this.type = type;
@@ -27,13 +28,10 @@ public class Human extends Player{
     public int getAge() {
         return age;
     }
-    public String enterMove(){
+
+    public String enterMove() {
         System.out.println("Player moves...");
         System.out.println("Enter your move: ");
         return scanner.next();
     }
-
-
-
-
 }

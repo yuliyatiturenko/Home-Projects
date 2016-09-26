@@ -6,15 +6,17 @@ abstract class Player {
     private int age;
     private char type;
 
-    public Player(String name,int age,char type) {
+    public Player(String name, int age, char type) {
         this.name = name;
         this.age = age;
         this.type = type;
 
     }
-  public Player(){
 
-  }
+    public Player() {
+
+    }
+
     public char getType() {
         return type;
     }
@@ -26,6 +28,7 @@ abstract class Player {
     public int getAge() {
         return age;
     }
-  abstract String enterMove();
+
+    abstract String enterMove();
 
 }
