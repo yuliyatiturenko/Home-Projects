@@ -11,40 +11,40 @@ public class BoardTest {
 
     Player playerSecond;
     Player playerFirst;
-    Board board1 = new Board(playerFirst, playerSecond);
+    Board board1 = new BoardKrestikiNoliki(playerFirst, playerSecond);
+    Game game = new KrestikiNoliki();
+
 
     @Before
     public void setUp() {
         playerFirst = new Human("Bob", 25, 'X');
         playerSecond = new Computer();
+
     }
 
 
     @Test
     public void getWinnerTest() {
-        Player currentPlayer = playerSecond;
-        Player winner = board1.getWinner();
+
+        Player winner = game.getWinner();
         String winnersName = winner.getName();
-        assertThat(winnersName, is("Bob"));
+        assertThat(winnersName, is("AsusX756U"));
     }
 
 
     @Test
     public void validateMoveTest() {
-        String move="22";
+        String move = "22";
         boolean b = board1.validateMove(move);
         assertThat(b, is(true));
     }
 
     @Test
     public void gameFinishedTest() {
-        char[][] board;
-        board = new char[3][3];
-        board1.fillBoard();
-        boolean b = board1.gameFinished();
+
+        boolean b = game.gameFinished();
         assertThat(b, is(false));
 
+
     }
-
-
 }

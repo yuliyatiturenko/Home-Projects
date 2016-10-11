@@ -1,24 +1,31 @@
 package Game1;
 
 
-public class Game {
+public abstract class Game {
 
-    public static void main(String[] args) {
+    abstract boolean gameFinished();
 
+    abstract boolean gameNoMove();
 
+    abstract boolean makeMove();
 
-        Player playerFirst = new Human("Bob",25,'X');
-        Player playerSecond = new Computer();
-        Board board = new Board(playerFirst, playerSecond);
+    abstract void printBoard();
 
-        while (!board.gameFinished() && !board.gameNoMove()) {
-            board.makeMove();
-            board.printBoard();
+    abstract boolean checkGameResult();
+
+    abstract Player getWinner();
+
+    final void playGame() {
+        while (!gameFinished() && !gameNoMove()) {
+            makeMove();
+            printBoard();
         }
-        if (board.checkGameResult(board)) {
-            Player player = board.getWinner();
+        if (checkGameResult()) {
+            Player player = getWinner();
             System.out.println("The winner is " + player.getName() + " " + player.getAge());
         } else System.out.println("Draw. Nobody lost");
+
     }
 
 }
+
