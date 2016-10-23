@@ -9,6 +9,7 @@ public class Human extends Player {
     private String name;
     private int age;
     private char type;
+    public Human(){}
 
     public Human(String name, int age, char type) {
         this.name = name;
@@ -30,6 +31,7 @@ public class Human extends Player {
     }
 
     public String enterMove() {
+
         System.out.println("Player moves...");
         System.out.println("Enter your move: ");
         return scanner.next();

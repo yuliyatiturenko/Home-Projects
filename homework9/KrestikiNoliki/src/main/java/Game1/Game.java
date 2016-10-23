@@ -2,12 +2,13 @@ package Game1;
 
 
 public abstract class Game {
+    String move;
 
     abstract boolean gameFinished();
 
     abstract boolean gameNoMove();
 
-    abstract boolean makeMove();
+    abstract boolean makeMove(String move);
 
     abstract void printBoard();
 
@@ -15,9 +16,14 @@ public abstract class Game {
 
     abstract Player getWinner();
 
+    abstract void changePlayer();
+
+    abstract Player getCurrentPlayer();
+
     final void playGame() {
         while (!gameFinished() && !gameNoMove()) {
-            makeMove();
+
+            makeMove(move);
             printBoard();
         }
         if (checkGameResult()) {

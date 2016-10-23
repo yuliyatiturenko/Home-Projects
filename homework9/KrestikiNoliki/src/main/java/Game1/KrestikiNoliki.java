@@ -1,13 +1,20 @@
 package Game1;
 
+
 public class KrestikiNoliki extends Game {
+
+
     Player playerFirst = new Human("Bob", 25, 'X');
-    Player playerSecond = new Computer();
+    Player playerSecond = new Human("James", 25, 'O');
     Board krestikiNoliki = new BoardKrestikiNoliki(playerFirst, playerSecond);
     Player currentPlayer = playerFirst;
     Player winner;
     private int kolichestvoHodov = 0;
     private char[][] board = krestikiNoliki.fillBoard();
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
 
     boolean gameNoMove() {
         if (kolichestvoHodov >= 9) {
@@ -16,8 +23,8 @@ public class KrestikiNoliki extends Game {
         return false;
     }
 
-    boolean makeMove() {
-        String move = currentPlayer.enterMove();
+    boolean makeMove(String move) {
+
 
         if (!krestikiNoliki.validateMove(move)) {
             return false;
@@ -81,5 +88,7 @@ public class KrestikiNoliki extends Game {
 
         return false;
     }
+
+
 }
 
