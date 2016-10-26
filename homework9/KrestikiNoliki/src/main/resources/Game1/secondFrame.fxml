@@ -1,0 +1,51 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="Game1.SecondFrameController"
+          vgap="10"
+          hgap="10">
+    <padding>
+        <Insets top="10" bottom="10" left="10" right="10" />
+    </padding>
+
+    <children>
+        <Label text="Enter your name"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"
+               GridPane.halignment="RIGHT" />
+
+        <TextField fx:id="name1"
+                   GridPane.rowIndex="0"
+                   GridPane.columnIndex="1"
+                   GridPane.halignment="LEFT" />
+				   
+		<Label text="Enter your age"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"
+               GridPane.halignment="RIGHT" />
+
+        <TextField fx:id="age1"
+                   GridPane.rowIndex="1"
+                   GridPane.columnIndex="1"
+                   GridPane.halignment="LEFT" />
+
+
+       <HBox GridPane.rowIndex="2"
+              GridPane.columnIndex="0"
+              GridPane.columnSpan="2"
+              alignment="CENTER">
+            <children>
+                    <Button text="StartGame" onAction="#startGame" />
+                    <Button text="Cancel" onAction="#cancelGame" />
+				
+            </children>
+        </HBox>
+    </children>
+</GridPane>

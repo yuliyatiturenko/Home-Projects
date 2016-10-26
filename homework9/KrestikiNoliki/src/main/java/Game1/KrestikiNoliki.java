@@ -3,14 +3,22 @@ package Game1;
 
 public class KrestikiNoliki extends Game {
 
-
-    Player playerFirst = new Human("Bob", 25, 'X');
-    Player playerSecond = new Human("James", 25, 'O');
+    Player playerFirst;
+    Player playerSecond;
     Board krestikiNoliki = new BoardKrestikiNoliki(playerFirst, playerSecond);
     Player currentPlayer = playerFirst;
     Player winner;
     private int kolichestvoHodov = 0;
     private char[][] board = krestikiNoliki.fillBoard();
+
+    public KrestikiNoliki() {
+        playerFirst = FirstFrameController.returnPlayerFirst();
+        playerSecond = SecondFrameController.returnPlayerSecond();
+        krestikiNoliki = new BoardKrestikiNoliki(playerFirst, playerSecond);
+        currentPlayer = playerFirst;
+        board = krestikiNoliki.fillBoard();
+    }
+
 
     public Player getCurrentPlayer() {
         return currentPlayer;
