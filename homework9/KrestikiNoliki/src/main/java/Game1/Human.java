@@ -17,6 +17,10 @@ public class Human extends Player {
         this.type = type;
 
     }
+    public Human(String name,char type){
+        this.name=name;
+        this.type = type;
+    }
 
     public char getType() {
         return type;

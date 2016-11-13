@@ -7,6 +7,7 @@
 <?import javafx.scene.control.CheckBox?>
 
 
+<?import javafx.scene.control.PasswordField?>
 <GridPane xmlns:fx="http://javafx.com/fxml"
           fx:controller="Game1.SecondFrameController"
           vgap="10"
@@ -16,7 +17,7 @@
     </padding>
 
     <children>
-        <Label text="Enter your name"
+        <Label text="Enter your login"
                GridPane.rowIndex="0"
                GridPane.columnIndex="0"
                GridPane.halignment="RIGHT" />
@@ -25,16 +26,16 @@
                    GridPane.rowIndex="0"
                    GridPane.columnIndex="1"
                    GridPane.halignment="LEFT" />
-				   
-		<Label text="Enter your age"
+
+        <Label text="Enter your password"
                GridPane.rowIndex="1"
                GridPane.columnIndex="0"
                GridPane.halignment="RIGHT" />
 
-        <TextField fx:id="age1"
-                   GridPane.rowIndex="1"
-                   GridPane.columnIndex="1"
-                   GridPane.halignment="LEFT" />
+        <PasswordField fx:id="password1"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="1"
+                       GridPane.halignment="LEFT" />
 
 
        <HBox GridPane.rowIndex="2"
@@ -44,6 +45,7 @@
             <children>
                     <Button text="StartGame" onAction="#startGame" />
                     <Button text="Cancel" onAction="#cancelGame" />
+                <Button text="Registration" onAction="#RegistrationAction"/>
 				
             </children>
         </HBox>

@@ -1,0 +1,33 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="624.0"
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"
+            fx:controller="Game1.StatisticsController">
+    <children>
+
+        <TableView fx:id="tableGames" layoutX="12.0" layoutY="62.0" prefHeight="324.0" prefWidth="600.0">
+            <columns>
+                <TableColumn prefWidth="50.0" text="№" fx:id="idColumn" />
+                <TableColumn prefWidth="100.0" text="Player1" fx:id="player1Column" />
+                <TableColumn prefWidth="100.0" text="Player2" fx:id="player2Column" />
+                <TableColumn prefWidth="150.0" text="Date" fx:id="dateColumn" />
+                <TableColumn prefWidth="100.0" text="Result" fx:id="resultColumn" />
+            </columns>
+        </TableView>
+        <Label layoutX="14.0" layoutY="18.0" text="List all games:">
+            <font>
+                <Font name="Verdana" size="20.0" />
+            </font>
+        </Label>
+
+        <Button prefWidth="100.0" text="Show Statistics" onAction="#showAction" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="300"/>
+        <Button prefWidth="100.0" text="Close" onAction="#closeAction" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="400" AnchorPane.rightAnchor="100"/>
+
+
+
+    </children>
+</AnchorPane>

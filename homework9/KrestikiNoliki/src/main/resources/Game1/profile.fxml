@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.CheckBox?>
+
 
 <?import javafx.scene.control.PasswordField?>
 <GridPane xmlns:fx="http://javafx.com/fxml"
-          fx:controller="Game1.FirstFrameController"
+          fx:controller="Game1.ProfileFrameController"
           vgap="10"
           hgap="10">
     <padding>
@@ -16,7 +16,7 @@
     </padding>
 
     <children>
-        <Label text="Enter your login"
+        <Label text="Enter your name"
                GridPane.rowIndex="0"
                GridPane.columnIndex="0"
                GridPane.halignment="RIGHT"/>
@@ -36,31 +36,34 @@
                        GridPane.columnIndex="1"
                        GridPane.halignment="LEFT" />
 
-
-        <Label text="Enter your type"
-               GridPane.rowIndex="4"
+        <Label text="Enter your country"
+               GridPane.rowIndex="2"
                GridPane.columnIndex="0"
                GridPane.halignment="RIGHT"/>
 
-        <CheckBox fx:id="type1"
-                  text="X"
-                  GridPane.rowIndex="4"
-                  GridPane.columnIndex="1"
-                  GridPane.halignment="LEFT"/>
-        <CheckBox fx:id="type2"
-                  text="O"
-                  GridPane.rowIndex="4"
-                  GridPane.columnIndex="2"
-                  GridPane.halignment="LEFT"/>
+        <TextField fx:id="country"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="1"
+                   GridPane.halignment="LEFT"/>
+
+        <Label text="Enter your age"
+               GridPane.rowIndex="3"
+               GridPane.columnIndex="0"
+               GridPane.halignment="RIGHT"/>
+
+        <TextField fx:id="age"
+                   GridPane.rowIndex="3"
+                   GridPane.columnIndex="1"
+                   GridPane.halignment="LEFT"/>
+
 
         <HBox GridPane.rowIndex="5"
               GridPane.columnIndex="0"
               GridPane.columnSpan="2"
               alignment="CENTER">
             <children>
-                <Button text="OK" onAction="#okAction"/>
-                <Button text="Cancel" onAction="#cancelAction"/>
-                <Button text="Registration" onAction="#RegistrationAction"/>
+                <Button text="Save" onAction="#SaveAction"/>
+                <Button text="Cancel" onAction="#cAction"/>
 
             </children>
         </HBox>
