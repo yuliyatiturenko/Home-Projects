@@ -1,0 +1,27 @@
+﻿Lastname: Pitt
+Firstname: Brad
+Age: 18
+
+Lastname: Aniston
+Firstname: Jenifer
+Age: 17
+
+Lastname: Jolie
+Firstname: Angelina
+Age: 19
+
+Lastname: Cruise
+Firstname: Tom
+Age: 20
+
+Lastname: Cruz
+Firstname: Penelopa
+Age: 18
+
+Lastname: Trump
+Firstname: Donald
+Age: 65
+
+Lastname: Clinton
+Firstname: Hilary
+Age: 60
